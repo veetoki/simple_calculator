@@ -19,6 +19,12 @@ Go to directory stored calc.py and run:
 ./calc.py
 ```
 
+```
+Enter the formula: (price * amount + added_tax) * (1 - discount) / unit
+Enter the file name: data.json
+27.5
+```
+
 ## Example
 File data.json
 ```
@@ -31,7 +37,6 @@ File data.json
 }
 ```
 
-Formula
 ```
 Without parentheses:
 calc("price * amount * discount", data) -> output 2500
@@ -42,6 +47,10 @@ calc("discount * 1000 + amount * price", data) -> output 5500
 With parentheses:
 calc("(price * amount + added_tax) * (1 - discount)", data) -> output 27500
 calc("(price * amount + added_tax) * (1 - discount) / unit", data) -> output 27.5
+calc("(price * (amount + added_tax)) * (1 - discount) / unit", data) -> output 2502.5
+
+Unsupport case:
+calc("(price * (amount + added_tax) / (4 - 2)) * (1 - discount) / unit", data) -> Wrong Result
 ```
 
 ## Limitation
