@@ -2,11 +2,13 @@
 
 Simple calculator is a simple dynamic calculator that developed for the interview requirement.
 
+Simple calculator can operate simple expression with operator: +, -, *, /.
+
 ## Installation
  
 
 ```bash
-git clone https://github.com/veetoki/test_interview.git
+git clone https://github.com/veetoki/simple_calculator.git
 ```
 
 ## Usage
@@ -17,7 +19,7 @@ Go to directory stored calc.py and run:
 ./calc.py
 ```
 
-## Test Sample
+## Example
 File data.json
 ```
 {
@@ -31,18 +33,34 @@ File data.json
 
 Formula
 ```
-"price * amount * discount" -> output 2500
-"price * amount * discount + 1000" -> output 3500
-"price * amount * unit" -> output 5000000
-"discount * 1000 + amount * price" -> output 55000
+Without parentheses:
+calc("price * amount * discount", data) -> output 2500
+calc("price * amount * discount + 1000", data) -> output 3500
+calc("price * amount * unit", data) -> output 5000000
+calc("discount * 1000 + amount * price", data) -> output 5500
+
+With parentheses:
+calc("(price * amount + added_tax) * (1 - discount)", data) -> output 27500
+calc("(price * amount + added_tax) * (1 - discount) / unit", data) -> output 27.5
 ```
 
 ## Limitation
-This simple calculator does not support parentheses.
+This simple calculator just support simple parentheses case, it does not support the case with more than 1 nested parentheses nested inside a parentheses.
+
+Example:
+```((a - b) / (d - c))```
 
 This simple calculator does not going to handle many user exceptions such as: wrong format operands, ... .
 
-Task Complexity: 5pts
+Task Complexity:
 
-Workload Estimated: 4 hours
+Build postfix expression: 2pts
+
+Implement evaluation postfix expression: 2pts
+
+Improve evaluation postfix expression to support parentheses: 3pts
+
+Total task complexity: 7pts
+
+Workload Estimated: 6 hours
 
