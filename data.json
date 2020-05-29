@@ -1,0 +1,7 @@
+{
+    "price": 100,
+    "amount": 50,
+    "discount": 0.5,
+    "unit": 1000,
+    "added_tax": 50000
+}
